@@ -7,49 +7,29 @@ import styled from "styled-components";
 import { useEffect, useRef } from "react";
 
 const AppContainer = styled.div`
-  padding: 0;
-  margin: 0;
+  // padding: 0;
+  // margin: 0;
 `;
 
 const LandingPageBodyWrapper = styled.div`
+  margin: 0 0 20px 0;
+  width: 500px;
+  height: 400px;
+  border: 2px solid #ccc;
   display: grid;
-  background-color: navyblue;
-  grid-template-columns: 1fr;
-  grid-column-gap: 10px;
-  grid-row-gap: 10px;
-
-  @media (min-width: 481px) {
-    grid-template-columns: 2fr 1fr;
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
-  }
-
-  @media (min-width: 768px) {
-    grid-template-columns: 1fr 3fr 1fr 1fr;
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
-  }
-
-  @media (min-width: 1025px) {
-    grid-template-columns: 2fr 4fr 2fr 2fr;
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
-  }
+  grid-gap: 10px;
+  grid-template-columns: repeat(4, 80px);
+  grid-template-rows: repeat(2, 100px);
+  justify-content: center;
+  align-content: end;
 `;
 
-const LetterComponent = styled.div`
-  background-color: #0069b3;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+const BoxComponent = styled.div`
+  background-color: #444;
+  color: #fff;
+  border-radius: 5px;
   padding: 20px;
-  font-size: 70px;
-  color: white;
-  line-height: 1;
-  font-family: "hobeaux-rococeaux-background", Helvetica;
-  font-weight: 200;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  font-size: 150%;
 `;
 
 const Header = styled.div`
@@ -61,6 +41,27 @@ const Nav = styled.div`
   flex-flow: row wrap;
   justify-content: space-between;
   align-items: stretch;
+`;
+
+const BoxOne = styled(BoxComponent)`
+  grid-column: 4 / 5;
+`;
+
+const BoxThree = styled(BoxComponent)`
+  grid-column: 3 / 4;
+`;
+
+const FeatureBox = styled(BoxComponent)`
+  grid-column: 1 / 3;
+  grid-row: 2 / 4;
+`;
+
+const BoxFour = styled(BoxComponent)`
+  grid-column: 3 / 4;
+`;
+
+const BoxFive = styled(BoxComponent)`
+  grid-column: 4 / 5;
 `;
 
 const OldIndex: NextPage = () => {
@@ -78,36 +79,76 @@ const OldIndex: NextPage = () => {
 
   return (
     <>
-      <AppContainer>
+      {/* <AppContainer>
         <Nav>
           <div>Fish</div>
           <div>Dish</div>
           <div>Wish</div>
-        </Nav>
-        <LandingPageBodyWrapper>
-          <LetterComponent>
-            <div className="letter">A</div>
-          </LetterComponent>
-          <LetterComponent>
-            <div className="letter">B</div>
-          </LetterComponent>
-          <LetterComponent>
-            <div className="letter">C</div>
-          </LetterComponent>
-          <LetterComponent>
-            <div className="letter">D</div>
-          </LetterComponent>
-          <LetterComponent>
-            <div className="letter">B</div>
-          </LetterComponent>
-          <LetterComponent>
-            <div className="letter">C</div>
-          </LetterComponent>
-          <LetterComponent>
-            <div className="letter">D</div>
-          </LetterComponent>
-        </LandingPageBodyWrapper>
-      </AppContainer>
+        </Nav> */}
+      <LandingPageBodyWrapper>
+        <BoxOne>
+          <div className="box item1">One</div>
+        </BoxOne>
+
+        <FeatureBox>
+          <div className="box item2">Two</div>
+        </FeatureBox>
+
+        <BoxThree>
+          <div className="box item3">Three</div>
+        </BoxThree>
+        <BoxFour>
+          <div className="box item4">Four</div>
+        </BoxFour>
+        <BoxFive>
+          <div className="box item5">Five</div>
+        </BoxFive>
+
+        {/* <div className="box item4">Four</div>
+        <div className="box item5">Five</div> */}
+
+        {/* <FeatureBox>
+            <BoxComponent>
+              <div className="box feature-page">A</div>
+            </BoxComponent>
+          </FeatureBox> */}
+
+        {/* <Box>
+          <BoxOne>
+            <div className="box item1">One</div>
+          </BoxOne>
+        </Box>
+        <Box>
+          <FeatureBox>
+            <div className="box item2">Two</div>
+          </FeatureBox>
+        </Box>
+        <Box>
+          <BoxThree>
+            <div className="box item3">Three</div>
+          </BoxThree>
+        </Box>
+        <Box>
+          <div className="box item4">Four</div>
+        </Box>
+        <Box>
+          <div className="box item5">Five</div>
+        </Box> */}
+
+        {/* <BoxThree>
+            <BoxComponent>
+              <div className="box thumb">C</div>
+            </BoxComponent>
+          </BoxThree> */}
+
+        {/* <BoxComponent>
+            <div className="box thumb">D</div>
+          </BoxComponent>
+          <BoxComponent>
+            <div className="box thumb">E</div>
+          </BoxComponent> */}
+      </LandingPageBodyWrapper>
+      {/* </AppContainer> */}
     </>
   );
 };
