@@ -6,7 +6,7 @@ import styles from "../styles/Home.module.css";
 import styled from "styled-components";
 import { useEffect, useRef } from "react";
 
-const Index: NextPage = () => {
+const ListIndex: NextPage = () => {
   const isAvailable = useRef(false);
   // const matchMedia = window?.matchMedia;
 
@@ -21,15 +21,22 @@ const Index: NextPage = () => {
 
   return (
     <>
-      <div className="grid-container">
-        <header>Header</header>
-        <aside>aside</aside>
-        <section>Header</section>
-        <aside>Header</aside>
-        <footer>Header</footer>
+      <nav className="flex-container">
+        <div className="flex-item">Nav Item</div>
+        <div className="flex-item">Nav Item</div>
+        <div className="flex-item">Nav Item</div>
+      </nav>
+      <div className="grid-wrapper">
+        <div className="grid-container">
+          <div className="grid-item">One</div>
+          <div className="grid-item">Two</div>
+          <div className="grid-item">Three</div>
+          <div className="grid-item">Four</div>
+          <div className="grid-item">Five</div>
+        </div>
       </div>
     </>
   );
 };
 
-export default Index;
+export default ListIndex;
